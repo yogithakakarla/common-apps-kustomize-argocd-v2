@@ -1,0 +1,50 @@
+# templates/applicationset.yaml
+{{- $counter := 1 }}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argocd-multipleapps
+  namespace: argocd
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:  
+  - list:
+      elements:
+     
+      {{- range $envlist := .Values.clusters }}
+      
+      - envargo: {{ $envlist.env }}
+        serverargo: {{ $envlist.server }}   
+      {{- end }}
+   
+  template:
+    metadata:
+      name: "my-app-{{ $counter }}" 
+      annotations: 
+        argocd.argoproj.io/sync-options: ApplyOnly=true
+    spec:
+      syncPolicy:
+        automated: 
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - ApplyOutOfSyncOnly=true
+          - ApplyOnly=true
+      project: default
+      sources:
+        - repoURL: https://github.com/yogithakakarla/kustomize-multiple-apps.git
+          targetRevision: HEAD
+          path: "{{`common/*/overlays/{{.envargo}}`}}"
+        
+        - repoURL: https://github.com/yogithakakarla/kustomize-multiple-apps.git
+          targetRevision: HEAD
+          path: "{{`{{.envargo}}/*/base`}}"
+        
+         
+        
+
+      destination:
+        server: "{{`{{.serverargo}}`}}"
+        namespace: "{{`{{.envargo}}`}}"
+{{- $counter = add $counter 1 }}
