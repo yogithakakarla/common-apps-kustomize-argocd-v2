@@ -1,0 +1,21 @@
+#
+name: projectone
+namespace: argocd
+#apps:
+#- app1:
+#    appname: app1
+#    wave: 3
+#    env: dev
+#    server: https://kubernetes.default.svc
+     
+#- app2:
+#    appname: app2
+#    wave: 2
+#    env: dev
+#    server: https://kubernetes.default.svc
+
+clusters:
+  - env: dev
+    server: https://kubernetes.default.svc
+  - env: prod
+    server: https://kubernetes.default.svc
