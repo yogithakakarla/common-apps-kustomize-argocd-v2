@@ -1,6 +1,6 @@
 ---
 resources:
-- base/app2
+- ../../../base/app2
 
 nameSuffix: -app2-dev
 namespace: dev-app2
