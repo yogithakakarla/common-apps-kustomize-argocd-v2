@@ -2,5 +2,5 @@
 resources:
 - ../../../base/app4
 
-nameSuffix: -app4-dev
+nameSuffix: -app4-prod
 namespace: prod-app4
