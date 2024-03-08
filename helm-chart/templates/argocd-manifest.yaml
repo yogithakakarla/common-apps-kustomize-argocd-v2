@@ -17,6 +17,7 @@ spec:
               revision: HEAD
               directories:
                 - path: overlays/common/{{ $envlist.env }}/*
+                - path: overlays/{{ $envlist.env }}/*
                 
           - list:
               elements:
