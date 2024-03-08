@@ -13,7 +13,7 @@ spec:
     - matrix:
         generators:
           - git:
-              repoURL: https://github.com/yogithakakarla/kustomize-multiple-apps.git
+              repoURL: https://github.com/yogithakakarla/helm-argocd-v2.git
               revision: HEAD
               directories:
                 - path: overlays/common/{{ $envlist.env }}/*
@@ -42,7 +42,7 @@ spec:
           - ApplyOnly=true
       project: default
       source:
-        repoURL: https://github.com/yogithakakarla/kustomize-multiple-apps.git
+        repoURL: https://github.com/yogithakakarla/helm-argocd-v2.git
         targetRevision: HEAD
         path: "{{`{{.path.path}}`}}"        
       destination:
