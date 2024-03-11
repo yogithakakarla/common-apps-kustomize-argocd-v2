@@ -12,6 +12,6 @@ generators:
       releaseName: prometheus-demo
       repo: https://prometheus-community.github.io/helm-charts
       version: 20.0.0
-config:
-  - helmChart:
-      enable-helm: true
+#config:
+#  - helmChart:
+#      enable-helm: true
