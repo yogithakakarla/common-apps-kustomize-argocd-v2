@@ -5,9 +5,8 @@ namePrefix: helm-
 
 resources:
 
-generators:
-- helmChart:
-    name: prometheus
+helmCharts:
+  - name: prometheus
     namespace: monitoring
     releaseName: prometheus-demo
     repo: https://prometheus-community.github.io/helm-charts
