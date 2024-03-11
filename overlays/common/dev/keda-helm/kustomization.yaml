@@ -6,8 +6,8 @@ namePrefix: keda-
 resources:
 
 helmCharts:
-  - name: kedacore
+  - name: kedacore/keda
     namespace: keda
-    releaseName: kedacore
+    releaseName: kedacore/keda
     repo: https://kedacore.github.io/charts
     version: 2.13.0
