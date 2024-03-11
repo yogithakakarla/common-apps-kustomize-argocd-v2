@@ -5,10 +5,13 @@ namePrefix: helm-
 
 resources:
 
-helmCharts:
-  - name: prometheus
-    repo: https://prometheus-community.github.io/helm-charts
-    version: 20.0.0
-    releaseName: prometheus-demo
-    namespace: monitoring
-    
+generators:
+  - helmChart:
+      name: prometheus
+      namespace: monitoring
+      releaseName: prometheus-demo
+      repo: https://prometheus-community.github.io/helm-charts
+      version: 20.0.0
+config:
+  - helmChart:
+      enable-helm: true
