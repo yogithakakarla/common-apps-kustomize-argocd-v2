@@ -8,4 +8,4 @@ metadata:
 namePrefix: helmapp-
 
 resources:
-- .
+- ./templates
