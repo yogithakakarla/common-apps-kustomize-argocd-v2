@@ -17,4 +17,5 @@ helmCharts:
   version: 0.1.0
   namespace: dev1
   repo: https://github.com/yogithakakarla/helm-argocd-v2
-  chart: base/helm-chart-backendapp
+  chartPath: base/helm-chart-backendapp
+  valuesFile: base/helm-chart-backendapp/values.yaml
