@@ -4,8 +4,8 @@ kind: Kustomization
 nameSuffix: -dev1
 namespace: dev1
 
-resources:
-- ../../../../base/helm-chart-backendapp
+#resources:
+#- ../../../../base/helm-chart-backendapp
  
 
 #helm:
