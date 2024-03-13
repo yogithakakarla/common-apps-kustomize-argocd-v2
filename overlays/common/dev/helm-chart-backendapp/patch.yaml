@@ -1,0 +1,12 @@
+apiVersion: apps/v
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  template:
+    spec:
+      containers:
+        - name: backend
+          env:
+            - name: ENVIRONMENT
+              value: "dev"
