@@ -4,7 +4,7 @@ namespace: dev1
 resources:
 
 helmGlobals:
-  chartHome: ../../../base/helm-chart-backendapp
+  chartHome: ../../../../base/helm-chart-backendapp
 patches:
 - path: patch.yaml
   target:
