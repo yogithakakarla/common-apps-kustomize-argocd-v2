@@ -1,0 +1,10 @@
+replicaCount: 1
+
+
+image:
+  repository: nodejs
+  tag: 14.16.0
+
+
+containerPort: 8080
+servicePort: 8080
