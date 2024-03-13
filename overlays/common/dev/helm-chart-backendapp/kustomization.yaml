@@ -5,8 +5,12 @@ nameSuffix: -dev1
 namespace: dev
 
 resources:
-- ../../../../base/
+- ../../../../base/helm-chart-backendapp
  
+
+helm:
+- name: backend
+  path: ../../../../base/helm-chart-backendapp
 
 helmGlobals:
   chartHome: ../../../../base/helm-chart-backendapp
