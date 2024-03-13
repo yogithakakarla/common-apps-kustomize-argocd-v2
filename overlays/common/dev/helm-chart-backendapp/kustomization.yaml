@@ -14,4 +14,3 @@ resources:
 
 helmGlobals:
   chartHome: ../../../../base/helm-chart-backendapp
-
