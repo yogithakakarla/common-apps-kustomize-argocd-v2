@@ -1,0 +1,12 @@
+nameSuffix: -dev1
+namespace: dev1
+
+resources:
+
+helmGlobals:
+  chartHome: ../../../base/helm-chart-backendapp
+patches:
+- path: patch.yaml
+  target:
+    kind: Deployment
+    name: backend
