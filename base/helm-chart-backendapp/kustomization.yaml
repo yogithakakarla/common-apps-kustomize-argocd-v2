@@ -5,7 +5,7 @@ nameSuffix: -dev1
 namespace: dev1
 
 helmGlobals:
-  chartHome: ../../../../base/helm-chart-backendapp
+  chartHome: charts
 
 
 #helmCharts:
