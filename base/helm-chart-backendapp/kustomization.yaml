@@ -22,12 +22,12 @@ helmGlobals:
 
 
 
-helmReleases:
-- name: helmchart-app
-  includeCRDs: true
-  valuesInline:
-    replicas: 1
-  releaseName: helmchart-app
-  version: 0.1.0
-  namespace: dev1
-  repo: https://github.com/yogithakakarla/helm-argocd-v2
+#helmReleases:
+#- name: helmchart-app
+#  includeCRDs: true
+#  valuesInline:
+#    replicas: 1
+#  releaseName: helmchart-app
+#  version: 0.1.0
+#  namespace: dev1
+#  repo: https://github.com/yogithakakarla/helm-argocd-v2
