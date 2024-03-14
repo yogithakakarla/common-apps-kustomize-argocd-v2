@@ -6,3 +6,9 @@ namespace: dev1
 
 resources:
 - ../../../../base/helm-chart-backendapp
+
+patches:
+- path: patch.yaml
+  target:
+    kind: Deployment
+    name: backend
