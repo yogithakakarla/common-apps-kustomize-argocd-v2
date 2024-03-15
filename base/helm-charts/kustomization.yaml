@@ -7,6 +7,11 @@ namespace: dev1
 helmGlobals:
   chartHome: charts
 
+helmCharts:
+- name: helmchart-app
+  releaseName: app-v1
+  valuesFile: charts/helmchart-app/values.yaml
+
 
 #helmCharts:
 #- name: helmchart-app
