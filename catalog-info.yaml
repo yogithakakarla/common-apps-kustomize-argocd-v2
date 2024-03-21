@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: common-apps-kustomize-argocd-v2
+  annotations:
+    github.com/project-slug: yogithakakarla/common-apps-kustomize-argocd-v2
+spec:
+  type: other
+  lifecycle: unknown
+  owner: YogithaKakarla
