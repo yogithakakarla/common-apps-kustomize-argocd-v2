@@ -6,6 +6,6 @@ metadata:
     github.com/project-slug: yogithakakarla/common-apps-kustomize-argocd-v2
     backstage.io/kubernetes-id: common-apps-kustomize-argocd-v2
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: staging
   owner: YogithaKakarla
