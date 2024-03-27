@@ -5,6 +5,8 @@ Task :
 3)Use of kustomize to better manage resources
 4)Each and every thing to be done with declarative approach - Yaml
 
+https://docs.google.com/document/d/1rKX2YvG4G_XvlAAWM9YtDXM8e6M4jZ3sIDM8jSAFQMs/edit?usp=sharing
+
 So , As per the requirement , we need to deploy common applications and also applications on env wise using kustomize and argocd . so we have followed below folder structure 
 
 base folder consists of  all applications 
