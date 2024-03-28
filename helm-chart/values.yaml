@@ -17,5 +17,22 @@ namespace: argocd
 clusters:
   - env: dev
     server: https://kubernetes.default.svc
+    apps:
+      - name: keda
+        label: keda-1
+        maxUpdate: 0
+      - name: prometheus
+        label: prometheus-2
+        maxUpdate: 0
+      - name: app1
+        label: app-3
+        maxUpdate: 100%
+      - name: app2
+        label: app-4
+        maxUpdate: 0
+      - name: helmchart-backend
+        label: app-5
+        maxUpdate: 0
   - env: prod
     server: https://kubernetes.default.svc
+

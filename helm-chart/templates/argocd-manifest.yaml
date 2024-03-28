@@ -13,18 +13,40 @@ spec:
     - matrix:
         generators:
           - git:
-              repoURL: https://github.com/yogithakakarla/helm-argocd-v2.git
+              repoURL: https://github.com/yogithakakarla/common-apps-kustomize-argocd-v2.git
               revision: HEAD
               directories:
-                - path: overlays/common/{{ $envlist.env }}/*
+                - path: overlays/common/{{ $envlist.env }}/bootstrap-apps/*
+                - path: overlays/common/{{ $envlist.env }}/business-apps/*
                 - path: overlays/{{ $envlist.env }}/*
                 
           - list:
               elements:
               - envargo: {{ $envlist.env }}
-                serverargo: {{ $envlist.server }}   
+                serverargo: {{ $envlist.server }}  
+                apps:
+                  {{- range $app := $envlist.apps }}
+                  - name: {{ $app.name }}
+                    maxUpdate: {{ $app.maxUpdate }}
+                  {{- end }} 
   {{- end }}
-   
+
+  strategy:
+    type: RollingSync
+    rollingSync:
+      steps:
+      {{- range $envlist := .Values.clusters }}
+        {{- range $app := $envlist.apps }}
+        - matchExpressions:
+            - key: app
+              operator: In
+              values:
+                - "{{ $app.label }}"
+          maxUpdate: "{{ $app.maxUpdate }}"
+        {{- end }}
+      {{- end }}
+
+
   template:
     metadata:
       
@@ -42,7 +64,7 @@ spec:
           - ApplyOnly=true
       project: default
       source:
-        repoURL: https://github.com/yogithakakarla/helm-argocd-v2.git
+        repoURL: https://github.com/yogithakakarla/common-apps-kustomize-argocd-v2.git
         targetRevision: HEAD
         path: "{{`{{.path.path}}`}}"        
       destination:
