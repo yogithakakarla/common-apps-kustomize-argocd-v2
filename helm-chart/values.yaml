@@ -17,22 +17,34 @@ namespace: argocd
 clusters:
   - env: dev
     server: https://kubernetes.default.svc
-    apps:
-      - name: keda
-        label: keda-1
-        maxUpdate: 0
-      - name: prometheus
-        label: prometheus-2
-        maxUpdate: 0
-      - name: app1
-        label: app-3
-        maxUpdate: 100%
-      - name: app2
-        label: app-4
-        maxUpdate: 0
-      - name: helmchart-backend
-        label: app-5
-        maxUpdate: 0
+
   - env: prod
     server: https://kubernetes.default.svc
 
+appOrder:
+  - syncOrder: 0
+    applications:
+    - name: prometheus
+      label: prometheus-helm
+    maxUpdate: 100
+  - syncOrder: 1
+    applications:
+    - name: app1
+      label: app1
+    - name: app2
+      label: app2
+    maxUpdate: 100
+  - syncOrder: 2
+    applications:
+    - name: helmchart-backend
+      label: helm-chart-backendapp
+    maxUpdate: 100
+  - syncOrder: 3
+    applications:
+    - name: app3
+      label: app3
+    - name: app4
+      label: app4
+    - name: keda
+      label: keda-helm
+    maxUpdate: 100
