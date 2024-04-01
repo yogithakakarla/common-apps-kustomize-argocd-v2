@@ -35,17 +35,22 @@ spec:
     type: RollingSync
     rollingSync:
       steps:
-      {{- range $envlist := .Values.clusters }}
-        {{- range $app := $envlist.apps }}
+      {{- range $wave := .Values.appOrder }}
         - matchExpressions:
             - key: app
               operator: In
               values:
-                - "{{ $app.label }}"
-          maxUpdate: "{{ $app.maxUpdate }}"
-        {{- end }}
+                {{- range $app := $wave.applications }}
+                {{- if hasKey $app "label" }}
+                - {{ $app.label }}
+                {{- else }}
+                {{- if hasKey $app "name" }}
+                - {{ $app.name }}
+                {{- end }}
+                {{- end }}
+          {{- end }}
+          maxUpdate: "{{ $wave.maxUpdate }}"
       {{- end }}
-
 
   template:
     metadata:
@@ -53,15 +58,15 @@ spec:
       name: "{{`{{.path.basename}}-{{.envargo}}`}}" 
       annotations: 
         argocd.argoproj.io/sync-options: ApplyOnly=true
+      labels:
+        app: "{{`{{.path.basename}}`}}"
      
     spec:
       syncPolicy:
-        automated: 
-          prune: true
-          selfHeal: true
         syncOptions:
           - ApplyOutOfSyncOnly=true
           - ApplyOnly=true
+          - CreateNamespace=true
       project: default
       source:
         repoURL: https://github.com/yogithakakarla/common-apps-kustomize-argocd-v2.git
