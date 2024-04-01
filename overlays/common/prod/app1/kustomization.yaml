@@ -1,6 +1,0 @@
----
-resources:
-- ../../../../base/app1
-
-nameSuffix: -app1-prod
-namespace: prod-app1
