@@ -4,5 +4,3 @@ resources:
 
 nameSuffix: -app2-dev
 namespace: dev-app2
-commonLabels:
-  app: "app-4"
