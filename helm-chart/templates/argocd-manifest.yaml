@@ -67,7 +67,7 @@ spec:
         syncOptions:
           - ApplyOutOfSyncOnly=true
           - ApplyOnly=true
-          - CreateNamespace=true
+         
       project: default
       source:
         repoURL: https://github.com/yogithakakarla/common-apps-kustomize-argocd-v2.git
@@ -75,5 +75,5 @@ spec:
         path: "{{`{{.path.path}}`}}"        
       destination:
         server: "{{`{{.serverargo}}`}}"
-        namespace: "{{`{{.envargo}}`}}"
+ 
     
