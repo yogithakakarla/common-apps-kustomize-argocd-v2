@@ -4,8 +4,8 @@ kind: Kustomization
 namePrefix: helm-
 
 resources:
-commonLabels:
-  app: "prometheus-2"
+- ./namespace.yaml
+
 helmCharts:
   - name: prometheus
     namespace: monitoring

@@ -1,24 +1,7 @@
-#apiVersion: kustomize.config.k8s.io/v1beta1
-#kind: Kustomization
-
-#nameSuffix: -dev1
-#namespace: dev1
-
-#resources:
-#- ../../../../base/helm-chart-backendapp
-
-#patches:
-#- path: patch.yaml
-#  target:
-#    kind: Deployment
-#   name: backend
-
-
 ---
 resources:
 - ../../../../../base/helm-chart-backendapp
+- ./namespace.yaml
 
 nameSuffix: -helm-dev1
 namespace: dev1
-commonLabels:
-  app: "app-5"

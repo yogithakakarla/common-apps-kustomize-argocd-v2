@@ -18,9 +18,6 @@ clusters:
   - env: dev
     server: https://kubernetes.default.svc
 
-  - env: prod
-    server: https://kubernetes.default.svc
-
 appOrder:
   - syncOrder: 0
     applications:

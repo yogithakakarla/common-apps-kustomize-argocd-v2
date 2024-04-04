@@ -24,11 +24,6 @@ spec:
               elements:
               - envargo: {{ $envlist.env }}
                 serverargo: {{ $envlist.server }}  
-                apps:
-                  {{- range $app := $envlist.apps }}
-                  - name: {{ $app.name }}
-                    maxUpdate: {{ $app.maxUpdate }}
-                  {{- end }} 
   {{- end }}
 
   strategy:
