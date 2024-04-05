@@ -23,7 +23,7 @@ spec:
           - list:
               elements:
               - envargo: {{ $envlist.env }}
-                serverargo: {{ $envlist.server }}  
+                serverargo: {{ $envlist.server }}
   {{- end }}
 
   strategy:
@@ -62,7 +62,6 @@ spec:
         syncOptions:
           - ApplyOutOfSyncOnly=true
           - ApplyOnly=true
-         
       project: default
       source:
         repoURL: https://github.com/yogithakakarla/common-apps-kustomize-argocd-v2.git
@@ -70,5 +69,3 @@ spec:
         path: "{{`{{.path.path}}`}}"        
       destination:
         server: "{{`{{.serverargo}}`}}"
- 
-    

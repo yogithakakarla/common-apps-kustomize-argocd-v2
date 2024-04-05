@@ -1,0 +1,7 @@
+---
+resources:
+- ../../../../base/app2
+- ./ns.yaml
+
+nameSuffix: -app2-dev
+namespace: dev-app2
