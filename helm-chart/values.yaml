@@ -23,19 +23,19 @@ appOrder:
     applications:
     - name: prometheus
       label: prometheus-helm
-    maxUpdate: 100
+    maxUpdate: 100%
   - syncOrder: 1
     applications:
     - name: app1
       label: app1
     - name: app2
       label: app2
-    maxUpdate: 100
+    maxUpdate: 100%
   - syncOrder: 2
     applications:
     - name: helmchart-backend
       label: helm-chart-backendapp
-    maxUpdate: 100
+    maxUpdate: 100%
   - syncOrder: 3
     applications:
     - name: app3
@@ -44,4 +44,4 @@ appOrder:
       label: app4
     - name: keda
       label: keda-helm
-    maxUpdate: 100
+    maxUpdate: 100%

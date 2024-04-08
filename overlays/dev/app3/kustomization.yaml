@@ -1,6 +1,7 @@
 ---
 resources:
 - ../../../base/app3
+- ./namespace.yaml
 
 nameSuffix: -app3-dev
 namespace: dev-app3
