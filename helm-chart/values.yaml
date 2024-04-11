@@ -43,6 +43,5 @@ appOrder:
     applications:
     - name: helmchart-backend
       label: helm-chart-backendapp
-    - name: keda
-      label: keda-helm
+
     maxUpdate: 100%
