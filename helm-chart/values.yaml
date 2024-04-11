@@ -33,15 +33,16 @@ appOrder:
     maxUpdate: 100%
   - syncOrder: 2
     applications:
-    - name: helmchart-backend
-      label: helm-chart-backendapp
-    maxUpdate: 100%
-  - syncOrder: 3
-    applications:
     - name: app3
       label: app3
     - name: app4
       label: app4
+
+    maxUpdate: 100%
+  - syncOrder: 3
+    applications:
+    - name: helmchart-backend
+      label: helm-chart-backendapp
     - name: keda
       label: keda-helm
     maxUpdate: 100%
