@@ -2,7 +2,7 @@ replicaCount: 1
 
 
 image:
-  repository: nodejs
+  repository: node
   tag: 14.16.0
 
 
