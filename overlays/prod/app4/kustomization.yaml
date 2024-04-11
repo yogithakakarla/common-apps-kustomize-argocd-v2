@@ -1,6 +1,7 @@
 ---
 resources:
 - ../../../base/app4
+- ./namespace.yaml
 
 nameSuffix: -app4-prod
 namespace: prod-app4
