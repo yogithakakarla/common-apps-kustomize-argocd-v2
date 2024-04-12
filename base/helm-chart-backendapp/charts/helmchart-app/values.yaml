@@ -2,8 +2,8 @@ replicaCount: 1
 
 
 image:
-  repository: node
-  tag: 14.16.0
+  repository: nginx
+  tag: latest
 
 
 containerPort: 8080
