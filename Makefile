@@ -24,4 +24,4 @@ install-argocd: ## Install ArgoCD
 
 install-commonapps: ## Install common apps using argocdmanifest
 	@echo "Installing apps"
-	@cd common-apps-kustomize-argocd-v2/helm-chart &&  helm install argocd-apps .  && argocd app list
+	@cd helm-chart &&  helm install argocd-apps .  && argocd app list
